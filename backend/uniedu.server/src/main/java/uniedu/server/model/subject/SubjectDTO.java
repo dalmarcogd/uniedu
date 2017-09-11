@@ -1,13 +1,13 @@
-package uniedu.server.model.userfunction;
+package uniedu.server.model.subject;
 
 import uniedu.server.model.base.BaseDTO;
 
 /**
- * Representa um {@link UserFunctionEntity}.
+ * Representa um {@link CourseEntity}.
  *
  * @author Guilherme Dalmarco (dalmarco.gd@gmail.com)
  */
-public class UserFunctionDTO extends BaseDTO {
+public class SubjectDTO extends BaseDTO {
 
     private Long code;
     private String name;

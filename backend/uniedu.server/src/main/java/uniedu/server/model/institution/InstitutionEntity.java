@@ -1,4 +1,4 @@
-package uniedu.server.model.userfunction;
+package uniedu.server.model.institution;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,28 +11,28 @@ import javax.validation.constraints.NotNull;
 import uniedu.server.model.base.BaseEntity;
 
 /**
- * Representa uma função.
+ * Represents a education institution.
  *
  * @author Guilherme Dalmarco (dalmarco.gd@gmail.com)
  */
 @Entity
-@Table(name = "funcao_usuario_externo")
-public class UserFunctionEntity extends BaseEntity {
+@Table(name = "institution")
+public class InstitutionEntity extends BaseEntity {
 
 	public static final String CODE = "code";
     public static final String NAME = "name";
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id_funcao", nullable = false)
+	@Column(name = "id_institution", nullable = false)
 	private Long id;
 
 	@NotNull
-	@Column(nullable = false, name = "co_funcao")
+	@Column(nullable = false, name = "code_institution")
 	private Long code;
 
 	@NotNull
-	@Column(nullable = false, name = "no_funcao", length=50)
+	@Column(nullable = false, name = "name_institution", length=50)
 	private String name;
 
 	/**

@@ -1,23 +1,25 @@
-package uniedu.server.model.user;
+package uniedu.server.model.person;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import uniedu.server.model.base.BaseDTO;
+import uniedu.server.model.grade.subject.GradeSubjectEntity;
+import uniedu.server.model.person.contact.PersonContactDTO;
 
 /**
  * Representa um {@link GradeSubjectEntity}.
  *
  * @author Guilherme Dalmarco (dalmarco.gd@gmail.com)
  */
-public class UserDTO extends BaseDTO {
+public class PersonDTO extends BaseDTO {
 
 	private Long code;
 	private String name;
     private LocalDate birthDate;
 	private String cpf;
-	private String username;
-	private String password;
-	private String email;
+	private List<PersonContactDTO> contacts = new ArrayList<>();
 
 	/**
 	 * Retorna uma instancia de {@link Long}
@@ -84,50 +86,18 @@ public class UserDTO extends BaseDTO {
 	}
 
 	/**
-	 * Retorna uma instancia de {@link String}
-	 * @return {@link String}
+	 * Retorna uma instancia de {@link List<GradeSubjectDTO>}
+	 * @return {@link List<GradeSubjectDTO>}
 	 */
-	public String getUsername() {
-		return username;
+	public List<PersonContactDTO> getContacts() {
+		return contacts;
 	}
 
 	/**
-	 * Atribui um {@link String}
-	 * @param username - {@link String}
+	 * Atribui um {@link List<GradeSubjectDTO>}
+	 * @param contacts - {@link List<GradeSubjectDTO>}
 	 */
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	/**
-	 * Retorna uma instancia de {@link String}
-	 * @return {@link String}
-	 */
-	public String getPassword() {
-		return password;
-	}
-
-	/**
-	 * Atribui um {@link String}
-	 * @param password - {@link String}
-	 */
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	/**
-	 * Retorna uma instancia de {@link String}
-	 * @return {@link String}
-	 */
-	public String getEmail() {
-		return email;
-	}
-
-	/**
-	 * Atribui um {@link String}
-	 * @param email - {@link String}
-	 */
-	public void setEmail(String email) {
-		this.email = email;
+	public void setContacts(List<PersonContactDTO> contacts) {
+		this.contacts = contacts;
 	}
 }

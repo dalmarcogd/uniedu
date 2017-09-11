@@ -7,16 +7,16 @@ import uniedu.server.crud.base.repository.AbstractCRUDRepository;
 import uniedu.server.crud.base.service.AbstractCRUDService;
 import uniedu.server.crud.userfunction.repository.UserFunctionCRUDRepository;
 import uniedu.server.model.base.BaseDTO;
-import uniedu.server.model.userfunction.UserFunctionDTO;
-import uniedu.server.model.userfunction.UserFunctionEntity;
+import uniedu.server.model.institution.InstitutionDTO;
+import uniedu.server.model.institution.InstitutionEntity;
 
 /**
- * Serviço de persistencia de {@link UserFunctionEntity}
+ * Serviço de persistencia de {@link CourseEntity}
  *
  * @author Guilherme Dalmarco (dalmarco.gd@gmail.com)
  */
 @Service
-public class UserFunctionCRUDService extends AbstractCRUDService<UserFunctionEntity, UserFunctionDTO> {
+public class UserFunctionCRUDService extends AbstractCRUDService<InstitutionEntity, InstitutionDTO> {
 
     @Autowired
     private UserFunctionCRUDRepository userFunctionCRUDRepository;
@@ -25,18 +25,18 @@ public class UserFunctionCRUDService extends AbstractCRUDService<UserFunctionEnt
      * {@inheritDoc}
      */
     @Override
-    protected AbstractCRUDRepository<UserFunctionEntity> getCRUDRepository() {
+    protected AbstractCRUDRepository<InstitutionEntity> getCRUDRepository() {
         return userFunctionCRUDRepository;
     }
 
     /**
      * Converte os dados do dto para entity.
      * @param dto    - {@link BaseDTO}
-     * @param entity - {@link UserFunctionEntity}
-     * @return {@link UserFunctionEntity}
+     * @param entity - {@link CourseEntity}
+     * @return {@link CourseEntity}
      */
     @Override
-    public UserFunctionEntity convertToEntity(UserFunctionDTO dto, UserFunctionEntity entity) {
+    public InstitutionEntity convertToEntity(InstitutionDTO dto, InstitutionEntity entity) {
     	entity.setId(dto.getId());
     	entity.setVersion(dto.getVersion());
     	entity.setCode(dto.getCode());
@@ -47,11 +47,11 @@ public class UserFunctionCRUDService extends AbstractCRUDService<UserFunctionEnt
     /**
      * Converte os dados do entity para dto.
      * @param dto    - {@link BaseDTO}
-     * @param entity - {@link UserFunctionEntity}
+     * @param entity - {@link CourseEntity}
      * @return {@link UserUserFunctionDTO}
      */
     @Override
-    public UserFunctionDTO convertToDTO(UserFunctionEntity entity, UserFunctionDTO dto) {
+    public InstitutionDTO convertToDTO(InstitutionEntity entity, InstitutionDTO dto) {
     	dto.setId(entity.getId());
     	dto.setVersion(entity.getVersion());
     	dto.setCode(entity.getCode());
@@ -61,23 +61,23 @@ public class UserFunctionCRUDService extends AbstractCRUDService<UserFunctionEnt
 
     /**
      * Cria uma entidade nova e vazia.
-     * @return {@link UserFunctionEntity}
+     * @return {@link CourseEntity}
      */
     @Override
-    public UserFunctionEntity createEmptyEntity() {
-        return new UserFunctionEntity();
+    public InstitutionEntity createEmptyEntity() {
+        return new InstitutionEntity();
     }
 
     @Override
-    public UserFunctionDTO createEmptyDTO() {
-        return new UserFunctionDTO();
+    public InstitutionDTO createEmptyDTO() {
+        return new InstitutionDTO();
     }
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected void internalValidate(UserFunctionEntity entity) {
+	protected void internalValidate(InstitutionEntity entity) {
 
 	}
 }

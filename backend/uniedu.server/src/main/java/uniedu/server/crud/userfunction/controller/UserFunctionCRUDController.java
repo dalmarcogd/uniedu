@@ -12,17 +12,17 @@ import uniedu.server.crud.base.controller.AbstractCRUDController;
 import uniedu.server.crud.base.service.AbstractCRUDService;
 import uniedu.server.crud.userfunction.service.UserFunctionCRUDService;
 import uniedu.server.crud.userfunction.service.UserFunctionQueryService;
-import uniedu.server.model.userfunction.UserFunctionDTO;
-import uniedu.server.model.userfunction.UserFunctionEntity;
+import uniedu.server.model.institution.InstitutionDTO;
+import uniedu.server.model.institution.InstitutionEntity;
 
 /**
- * Implementação de {@link AbstractCRUDController} para {@link UserFunctionDTO}
+ * Implementação de {@link AbstractCRUDController} para {@link CourseDTO}
  *
  * @author Guilherme Dalmarco (dalmarco.gd@gmail.com)
  */
 @RestController
 @RequestMapping("/userfunctions")
-public class UserFunctionCRUDController extends AbstractCRUDController<UserFunctionDTO, UserFunctionEntity> {
+public class UserFunctionCRUDController extends AbstractCRUDController<InstitutionDTO, InstitutionEntity> {
 
     private UserFunctionCRUDService userFunctionCRUDService;
     private UserFunctionQueryService userFunctionQueryService;
@@ -50,11 +50,11 @@ public class UserFunctionCRUDController extends AbstractCRUDController<UserFunct
 	}
 
     /**
-     * Serviço de persistencia de {@link UserFunctionEntity}
-     * @return {@link AbstractCRUDService} of {@link UserFunctionEntity}
+     * Serviço de persistencia de {@link CourseEntity}
+     * @return {@link AbstractCRUDService} of {@link CourseEntity}
      */
     @Override
-    protected AbstractCRUDService<UserFunctionEntity, UserFunctionDTO> getService() {
+    protected AbstractCRUDService<InstitutionEntity, InstitutionDTO> getService() {
         return getUserFunctionCRUDService();
     }
 
